@@ -57,9 +57,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BasePage.cs" />
     <Compile Include="BaseTest.cs" />
+    <Compile Include="DashboardPage.cs" />
+    <Compile Include="LoginPage.cs" />
+    <Compile Include="MainPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LoginTest.cs" />
+    <Compile Include="SignUpPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

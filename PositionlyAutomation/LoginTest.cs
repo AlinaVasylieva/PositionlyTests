@@ -15,10 +15,10 @@ namespace PositionlyAutomation
         [TestMethod]
         public void SuccessfulLogin()
         {
-            driver.FindElement(By.XPath("//*[@id='header']/div/div[1]/ul/li[5]/a")).Click();
-            driver.FindElement(By.XPath("//*[@id='user_email']")).SendKeys(userEmail);
-            driver.FindElement(By.XPath("//*[@id='user_password']")).SendKeys(userPassword);
-            driver.FindElement(By.XPath("//*[@id='new_user']/div[2]/input")).Submit();
+            page.LogInClick().
+                PopulateUserEmail(userEmail).
+                PopulateUserPass(userPassword).
+                SubmitLoginBtn();
 
             Assert.AreEqual(_expectedTitle, driver.Title);
         }

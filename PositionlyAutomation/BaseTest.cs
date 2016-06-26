@@ -11,14 +11,18 @@ namespace PositionlyAutomation
         protected string url = "https://positionly.com/";
         protected string userEmail = "a.v.vasylieva@gmail.com";
         protected string userPassword = "123456";
+        protected MainPage page;
 
         [TestInitialize()]
         public void Initialize()
         {
             driver = new FirefoxDriver();
+
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             driver.Navigate().GoToUrl(url);
+
+            page = new MainPage(driver);
         }
 
         [TestCleanup()]
